@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.team8capstone.vuzixtestapplication.video.VideoActivity"
+            android:exported="true"
+            />
     </application>
 
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
