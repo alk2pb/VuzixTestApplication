@@ -41,7 +41,14 @@ public class VideoActivity extends Activity implements SurfaceHolder.Callback, M
         surfaceHolder = surfaceView.getHolder();
         surfaceHolder.addCallback(this);
 
-        setPageSelectedListener();
+//        setPageSelectedListener();
+    }
+
+    @Override
+    public void onPause(){
+        finish();
+
+        super.onPause();
     }
 
     @Override

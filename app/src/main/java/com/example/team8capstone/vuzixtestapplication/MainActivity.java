@@ -234,7 +234,7 @@ public class MainActivity extends Activity implements RecognitionListener {
         //   set clock/time
         //   cut, copy, paste, delete
         //   0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-        String[] keywords = new String[]{"next", "previous", "select", "cancel", "exit", "shut down"};
+        String[] keywords = new String[]{"next", "previous", "select", "stop", "cancel", "exit", "shut down"};
         ArrayList<String> recData = partialResults.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
         String getData = new String();
 
@@ -272,7 +272,7 @@ public class MainActivity extends Activity implements RecognitionListener {
                             playing = true;
                         }
                         break;
-                    case "cancel":
+                    case "stop":
                         if (playing) {
                             Intent i = new Intent(MainActivity.this, VideoActivity.class);
                             i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -280,7 +280,9 @@ public class MainActivity extends Activity implements RecognitionListener {
                             MainActivity.this.startActivity(i);
 //                            playing = false;
                         }
-                        else if (alert11.isShowing()) {
+                        break;
+                    case "cancel":
+                        if (alert11.isShowing()) {
                             alert11.getButton(AlertDialog.BUTTON_NEGATIVE).performClick();
                         }
                         break;
