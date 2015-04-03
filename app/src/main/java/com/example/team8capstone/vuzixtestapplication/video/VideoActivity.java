@@ -46,13 +46,21 @@ public class VideoActivity extends Activity implements SurfaceHolder.Callback, M
 
     @Override
     public void onPause(){
-        finish();
-
+//        Intent returnIntent = new Intent();
+//        setResult(RESULT_OK,returnIntent);
+//        finish();
         super.onPause();
     }
 
     @Override
     public void onCompletion(MediaPlayer mediaplayer) {
+        Intent returnIntent = new Intent();
+        setResult(RESULT_OK,returnIntent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
         Intent returnIntent = new Intent();
         setResult(RESULT_OK,returnIntent);
         finish();

@@ -16,15 +16,30 @@ public class CardInfo {
     public boolean hasHeader = false;
     public boolean hasText = false;
     public String header;
-    public int headerTextSize = 30;
-    public int textSize = 25;
-    public String text;
+    public int headerTextSize = 25;
+    public int textSize = 20;
+    public String text = "";
+    public boolean hasBullets = false;
 
 
     public CardInfo(int _slideNumber, int _xmlLayout) {
         slideNumber = _slideNumber;
         xmlLayout = _xmlLayout;
+    }
 
+    public CardInfo addBullet(String _text) {
+        if (!hasBullets) {
+            _text = "• " + _text;
+        }
+        else {
+            _text = "\n• " + _text;
+        }
+
+        text += _text;
+        hasBullets = true;
+        hasText = true;
+
+        return this;
     }
 
     public CardInfo setImageResource(int _imageResource){
