@@ -330,7 +330,7 @@ public class MainActivity extends Activity implements RecognitionListener {
 
         @Override
         public int getCount() {
-            return 11;
+            return 12;
         }
     }
 
@@ -431,7 +431,7 @@ public class MainActivity extends Activity implements RecognitionListener {
                 .setImageResource(R.drawable.tpic4));
         cardInfos.add(new CardInfo(cardInfos.size(), R.layout.fragment_main)
                 .setHeader("The Knot Hole")
-                .setText("• The area between your neck and the X we’ll call the Knot Hole \n" +
+                .setText("• The area between your neck and the X we’ll call the Knot Hole\n" +
                         "• The Fat end can make four possible motions\n" +
                         "• Come out of the Hole\n" +
                         "• Go into the Hole \n" +
@@ -483,7 +483,8 @@ public class MainActivity extends Activity implements RecognitionListener {
                         "• Pull the fat end downward to tighten the knot\n" +
                         "• Be sure you do not lose the skinny end")
                 .setVideoResource(R.raw.outofholeagain11)
-                .setImageResource(R.drawable.tpic11));
+                .setImageResource(R.drawable.tpic11)
+                .setTextSize(18));
         cardInfos.add(new CardInfo(cardInfos.size(), R.layout.fragment_main)
                 .setHeader("Tidy the Knot")
                 .setText("• Squeeze the bottom of the knot to help form the proper shape\n" +
